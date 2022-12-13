@@ -31,14 +31,25 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
+# Used for communication with AWS S3 for operations on images (https://github.com/aws/aws-sdk-ruby)
+gem "aws-sdk-s3", '~> 1'
+
+# Used to communicate with "https://pokeapi.co/" API (https://github.com/jnunemaker/httparty)
+gem "httparty", "~> 0.20.0"
+
+# Used to open pokemon pictures (https://github.com/ruby/open-uri)
+gem "open-uri", "~> 0.3.0"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Used for debugging (https://github.com/deivid-rodriguez/byebug)
+  gem "byebug", "~> 11.1"
 end
 
 group :development do
